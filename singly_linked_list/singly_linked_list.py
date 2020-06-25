@@ -58,7 +58,20 @@ class LinkedList:
         return True
       # otherwise, go to the next node
       current_node = current_node.next_node
-    return False 
+    return False
+
+  def get_max(self):
+    if self.head is None or self.tail is None:
+      return None
+    else:
+      item = self.head
+      max = self.head
+      while item:
+          if item.value > max.value:
+              max = item
+          item = item.next_node
+      return max.value
+        
 # example
 # linked_list = LinkedList()
 # linked_list.add_to_head(0)
